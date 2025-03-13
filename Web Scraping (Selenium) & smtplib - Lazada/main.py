@@ -32,5 +32,5 @@ def send_mail():
 
 driver.quit()
 
-if current_price < 100:
+if current_price <= 100:
     send_mail()

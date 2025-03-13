@@ -1,6 +1,7 @@
 import turtle
 from turtle import Turtle, Screen
 import random
+from tkinter import messagebox
 
 screen = Screen()
 screen.setup(500,400)
@@ -22,9 +23,9 @@ while not game_end:
         if i.xcor() > 200:
             winner = i.pencolor()
             if winner == user:
-                print(f"You won! The winner of the race is {winner}")
+                messagebox.showinfo(title="Congratulations!", message="You won! The winner of the race is {winner}")
             else:
-                print(f"You lost! The winner of the race is {winner}")
+                messagebox.showinfo(title="That's Unfortunate!", message=f"You lost! The winner of the race is {winner}")
             game_end = True
 
         distance = random.randint(0,10)

@@ -6,7 +6,8 @@ from dotenv import load_dotenv
 
 
 load_dotenv()
-posts = requests.get("https://api.npoint.io/4cedc647e52fc72c2543").json()
+URL = os.environ["API"]
+posts = requests.get(URL).json()
 
 app = Flask(__name__)
 

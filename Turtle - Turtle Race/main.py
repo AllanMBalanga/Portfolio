@@ -5,7 +5,7 @@ from tkinter import messagebox
 
 screen = Screen()
 screen.setup(500,400)
-user = screen.textinput("Make your bet","Enter a color (R/O/Y/G/B/I/V): ")
+user = screen.textinput("Make your bet","Enter a color (ROYGBIV): ")
 colors = ["red","orange","yellow","green","blue","indigo","violet"]
 y = [-70, -40, -10, 20, 50, 80, 100]
 turtles = []

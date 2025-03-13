@@ -7,7 +7,7 @@ screen = Screen()
 screen.setup(500,400)
 user = screen.textinput("Make your bet","Enter a color (R/O/Y/G/B/I/V): ")
 colors = ["red","orange","yellow","green","blue","indigo","violet"]
-y = [-60,-40,-20,-0,20,40,60]
+y = [-70, -40, -10, 20, 50, 80, 100]
 turtles = []
 game_end = False
 

@@ -23,10 +23,11 @@ while not game_end:
         if i.xcor() > 200:
             winner = i.pencolor()
             if winner == user:
-                messagebox.showinfo(title="Congratulations!", message="You won! The winner of the race is {winner}")
+                messagebox.showinfo(title=f"Congratulations!", message=f"You won! The winner of the race is {winner}")
+                game_end = True
             else:
                 messagebox.showinfo(title="That's Unfortunate!", message=f"You lost! The winner of the race is {winner}")
-            game_end = True
+                game_end = True
 
         distance = random.randint(0,10)
         i.forward(distance)

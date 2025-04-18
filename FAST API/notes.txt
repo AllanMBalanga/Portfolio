@@ -1,0 +1,34 @@
+FastAPI
+- does all the validation for the data
+- automatically generates documentation
+- good auto-completion and code suggestion
+- jsonify data automatically
+
+Running the API:
+on terminal
+uvicorn main:app --reload           main = the name of the python file
+
+@app.get("/")            #depends on the method that you want to use (app.get/post/put/delete/...)
+
+Path Parameter Format ({}):
+In FastAPI, brackets are used for path parameters:
+@app/get("/home/{id}")
+def home(id:int):
+return
+
+Type hints:
+for type hints (id: int) in FastAPI, if the condition is not met,
+it will automatically send an error message
+
+Path function (Path())
+used to declare and validate path parameters in the URL. The Path function helps you define constraints for the parameter, such as:
+A description of the parameter.
+Limits for the parameter's value (e.g., greater than 0, less than 2).
+= Path(None, description="For ID", gt=0, lt=2)
+
+FastAPI documentation:
+add /docs as the endpoint to the given URL - (http://127.0.0.1:8000/docs)
+
+Query - comes after question mark (?) in a url
+
+BackgroundTasks

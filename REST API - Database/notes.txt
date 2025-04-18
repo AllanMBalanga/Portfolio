@@ -1,0 +1,40 @@
+pip install -r requirements.txt
+
+returning item in REST API must be:
+JSON serializable - a Python object can be converted into a JSON (JavaScript Object Notation) format using json.dumps() from Python’s built-in json module.
+
+Serializable:
+dict, list, tuple (converted to JSON array, str, int, float, bool, None (converted to null in JSON)
+
+Not Serializable (TypeError):
+set, bytes, complex, Custom objects (unless handled manually)
+
+Parsing is the process of analyzing and extracting structured data from an input (like a request body in an API).
+It ensures that incoming data is correctly formatted and meets the expected type and constraints.
+
+In Flask-RESTful, reqparse is used to parse and validate incoming request data (usually from a PUT or POST request).
+It ensures that the request includes the correct parameters and types before processing.
+
+
+Can you use different method names aside from Get, Post, Put, Patch, Delete?
+No, not if you want them to work automatically with HTTP methods. Flask-RESTful relies on these specific method names (get, post, etc.)
+to map HTTP requests to your class methods. If you name them differently (e.g., create_video instead of post),
+Flask-RESTful won't recognize them unless you manually route them (which defeats the purpose of using Flask-RESTful's conventions).
+
+
+How Flask-RESTful handle HTTP requests (using main.py and test.py as examples)
+1.  Inheritance: class Videos(Resource)
+Resource - Base class that enables HTTP method handling.
+By inheriting from flask_restful.Resource, your Videos class gains the ability to handle HTTP methods via predefined method names (get, post, etc.).
+This is a core feature of Flask-RESTful. The parent Resource class provides the plumbing to connect HTTP methods to your Python methods.
+
+2.  Flask-RESTful automatically maps HTTP methods to your class methods based on their names:
+GET - get(self, id)     /    POST - post(self, id)    /   PUT - put(self, id)    /    PATCH - patch(self, id)    /   DELETE - delete(self, id)
+
+3.  URL Routing: api.add_resource()
+add_resource binds your Videos class to a specific URL route.
+It tells Flask: "Use the Videos class to handle all requests to /videos/<int:video_id>."
+You can bind multiple URLs to the same Resource class if needed.
+
+@marshal_with is a decorator provided by Flask-RESTful that automatically formats the output of your API endpoints into a consistent JSON structure.
+It ensures that the response data matches the schema you define (using resource_fields), and it handles serialization of complex objects (like SQLAlchemy models) into JSON.

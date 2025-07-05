@@ -4,9 +4,6 @@ import html
 import unittest
 from unittest.mock import patch
 
-#TODO use mocking to simulate API responses
-#TODO multiple/boolean - pass in sample data
-
 class TestFetchQuestions(unittest.TestCase):
     @patch("project.requests.get")
     def test_fetch_questions(self, mock_get_data):

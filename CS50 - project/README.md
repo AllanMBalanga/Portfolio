@@ -1,6 +1,5 @@
 # Quiz Game using Tkinter & OpenTDB API
-## Video Demo:  https://youtu.be/6vsKBf4Ixuk
-### Brief Description:
+## Brief Description:
 The project is a quiz game built with Python using a graphical user interface (GUI) by utilizing the Tkinter library. It fetches data such as questions, answers, and, incorrect answers from Open Trivia Database (OpenTDB) API. The questions are customized based on the preferences of the user, including the level of difficulty (easy, medium, hard), quiz type (multiple choice or true/false), and the number of questions (maximum of 50) by using HTTP get request.
 
 ### Functionalities:
